@@ -6,13 +6,15 @@ import { FILTROS_INICIALES, filtrarProyectos, hayFiltros, paginar, totalPaginas 
 import PageTitle from '../components/PageTitle';
 import ProjectFilters from '../components/ProjectFilters';
 import ProjectCard from '../components/ProjectCard';
+import ProjectSidebar from '../components/ProjectSidebar';
 import Pagination from '../components/Pagination';
 
-// Vista de proyectos: filtros + lista paginada.
+// Vista de proyectos: filtros + lista paginada + sidebar de detalle.
 function Projects() {
   const { projects, loading, error } = useContext(PortfolioContext);
   const [filtros, setFiltros] = useState(FILTROS_INICIALES);
   const [pagina, setPagina] = useState(1);
+  const [seleccionado, setSeleccionado] = useState(null);
 
   // 1. Filtrar → 2. Paginar (10 por página).
   const filtrados = filtrarProyectos(projects, filtros);
@@ -33,12 +35,20 @@ function Projects() {
     window.scrollTo(0, 0);
   }
 
+  function handleSeleccionar(proyecto) {
+    setSeleccionado(proyecto);
+  }
+
+  function handleCerrarDetalle() {
+    setSeleccionado(null);
+  }
+
   return (
     <section className="section container">
       <PageTitle
         eyebrow="Portafolio"
         title="Proyectos"
-        subtitle="Soluciones de escritorio, web, datos, IA y ciberseguridad."
+        subtitle="Soluciones de escritorio, web, datos e IA. Selecciona un proyecto para ver todos sus detalles."
       />
 
       <ProjectFilters categorias={CATEGORIAS} onFilter={handleFiltrar} onClear={handleLimpiar} />
@@ -65,7 +75,12 @@ function Projects() {
           ) : (
             <div className="grid grid--3">
               {visibles.map((proyecto) => (
-                <ProjectCard key={proyecto.id} project={proyecto} />
+                <ProjectCard
+                  key={proyecto.id}
+                  project={proyecto}
+                  onSelect={handleSeleccionar}
+                  selected={seleccionado !== null && seleccionado.id === proyecto.id}
+                />
               ))}
             </div>
           )}
@@ -73,6 +88,8 @@ function Projects() {
           <Pagination page={pagina} totalPages={total} onChange={handleCambiarPagina} />
         </>
       )}
+
+      <ProjectSidebar project={seleccionado} onClose={handleCerrarDetalle} />
     </section>
   );
 }
