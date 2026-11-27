@@ -8,12 +8,14 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './views/Home';
 import Projects from './views/Projects';
+import Stack from './views/Stack';
 
 // Muestra la vista que está guardada en el estado global (renderizado condicional).
 function VistaActual() {
   const { vista } = useContext(PortfolioContext);
 
   if (vista === 'proyectos') return <Projects />;
+  if (vista === 'stack') return <Stack />;
   return <Home />;
 }
 
