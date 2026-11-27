@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "titulo": "Panel de Gestión NUTRIALIMENTOS",
+    "categoria": "Escritorio",
+    "tecnologia": "Python · Tkinter · SQL Server",
+    "anio": 2026,
+    "estado": "En desarrollo",
+    "descripcion": "Aplicación de escritorio que unifica los módulos de auxiliar cárnico, vendedores, cambio de precios y usuarios para dos empresas. Guarda en la base principal y replica a los puntos de venta.",
+    "enlace": "https://github.com/RIASLAB",
+    "autor": "Jhon"
+  },
+  {
+    "id": 2,
+    "titulo": "Menú de Precios por punto de venta",
+    "categoria": "Escritorio",
+    "tecnologia": "Python · Tkinter · pyodbc",
+    "anio": 2026,
+    "estado": "Terminado",
+    "descripcion": "Aplica precios temporales a varios productos en varios puntos de venta a la vez; si un punto de venta falla, los demás se aplican igual.",
+    "enlace": "https://github.com/RIASLAB",
+    "autor": "Jhon"
+  },
+  {
+    "id": 3,
+    "titulo": "Creación de usuarios y permisos",
+    "categoria": "Ciberseguridad",
+    "tecnologia": "Python · SQL Server · ODBC 18",
+    "anio": 2026,
+    "estado": "En desarrollo",
+    "descripcion": "Crea cajeros y administradores con permisos estandarizados (principio de mínimo privilegio) usando una conexión cifrada a la base de datos.",
+    "enlace": "https://github.com/RIASLAB",
+    "autor": "Jhon"
+  },
+  {
+    "id": 4,
+    "titulo": "Reportes de venta y cartera SAP",
+    "categoria": "Datos y reportes",
+    "tecnologia": "SAP B1 · HANA · Excel",
+    "anio": 2026,
+    "estado": "Terminado",
+    "descripcion": "Informes semanales de venta y cartera conectados directamente a SAP HANA y entregados en Excel al área comercial.",
+    "enlace": "https://github.com/RIASLAB",
+    "autor": "Jhon"
+  },
+  {
+    "id": 5,
+    "titulo": "LugoVet – Sistema de gestión veterinaria",
+    "categoria": "Web",
+    "tecnologia": "Laravel · PHP · MySQL",
+    "anio": 2026,
+    "estado": "En desarrollo",
+    "descripcion": "Proyecto académico: aplicación web para gestionar consultas médicas, vacunas, baños, peluquería y otros servicios veterinarios.",
+    "enlace": "https://github.com/RIASLAB",
+    "autor": "Ambos"
+  },
+  {
+    "id": 6,
+    "titulo": "Portafolio con asistente de IA",
+    "categoria": "IA",
+    "tecnologia": "React · Vite · Gemini API",
+    "anio": 2026,
+    "estado": "Terminado",
+    "descripcion": "Este mismo sitio: portafolio del equipo en React con paginación, filtros, Context API y un asistente conversacional conectado a un modelo de IA.",
+    "enlace": "https://github.com/RIASLAB/portafolio",
+    "autor": "Ambos"
+  },
+  {
+    "id": 7,
+    "titulo": "CMMS de mantenimiento",
+    "categoria": "Web",
+    "tecnologia": "Node.js · React",
+    "anio": 2026,
+    "estado": "Terminado",
+    "descripcion": "Sistema de gestión de mantenimiento (CMMS) para registrar equipos, órdenes de trabajo y mantenimientos preventivos y correctivos.",
+    "enlace": "https://github.com/RIASLAB",
+    "autor": "Jhon"
+  },
+  {
+    "id": 8,
+    "titulo": "Implementación ERP Odoo",
+    "categoria": "Web",
+    "tecnologia": "Odoo · Python",
+    "anio": 2026,
+    "estado": "Terminado",
+    "descripcion": "Configuración del ERP, módulos a medida, migración de datos, soporte y capacitación a usuarios.",
+    "enlace": "https://github.com/RIASLAB",
+    "autor": "Jhon"
+  },
+  {
+    "id": 9,
+    "titulo": "Auditoría interna con AuditHCE",
+    "categoria": "Ciberseguridad",
+    "tecnologia": "AuditHCE",
+    "anio": 2026,
+    "estado": "Terminado",
+    "descripcion": "Proyecto académico con Luis Fernando Majin: auditoría interna de sistemas a la IPS Clínica Salud Florida.",
+    "enlace": "https://github.com/RIASLAB",
+    "autor": "Ambos"
+  },
+  {
+    "id": 10,
+    "titulo": "Despliegue de Acronis RMM",
+    "categoria": "Ciberseguridad",
+    "tecnologia": "Acronis RMM · Backups",
+    "anio": 2026,
+    "estado": "Terminado",
+    "descripcion": "Despliegue de la plataforma de gestión y monitoreo remoto de equipos, con copias de seguridad centralizadas.",
+    "enlace": "https://github.com/RIASLAB",
+    "autor": "Jhon"
+  },
+  {
+    "id": 11,
+    "titulo": "Implementación de firewall empresarial",
+    "categoria": "Ciberseguridad",
+    "tecnologia": "pfSense · Squid · pfBlockerNG",
+    "anio": 2026,
+    "estado": "Terminado",
+    "descripcion": "Proyecto práctico: configuración de firewall, interfaces de red, DHCP y control de conectividad para una infraestructura empresarial.",
+    "enlace": "https://github.com/LuisMajin",
+    "autor": "Luis"
+  }
+]
