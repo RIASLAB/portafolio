@@ -10,6 +10,7 @@ import Home from './views/Home';
 import Projects from './views/Projects';
 import Stack from './views/Stack';
 import Contact from './views/Contact';
+import ValueProposition from './views/ValueProposition';
 
 // Muestra la vista que está guardada en el estado global (renderizado condicional).
 function VistaActual() {
@@ -18,6 +19,7 @@ function VistaActual() {
   if (vista === 'proyectos') return <Projects />;
   if (vista === 'stack') return <Stack />;
   if (vista === 'contacto') return <Contact />;
+  if (vista === 'propuesta') return <ValueProposition />;
   return <Home />;
 }
 
