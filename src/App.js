@@ -1,14 +1,19 @@
+import { useContext } from 'react';
 import './styles.css';
 
-import { PortfolioProvider } from './context/PortfolioContext';
+import { PortfolioContext, PortfolioProvider } from './context/PortfolioContext';
 import { equipo, integrantes } from './data/profile';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './views/Home';
+import Projects from './views/Projects';
 
-// Por ahora solo existe la vista de inicio.
+// Muestra la vista que está guardada en el estado global (renderizado condicional).
 function VistaActual() {
+  const { vista } = useContext(PortfolioContext);
+
+  if (vista === 'proyectos') return <Projects />;
   return <Home />;
 }
 
