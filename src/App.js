@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Home from './views/Home';
 import Projects from './views/Projects';
 import Stack from './views/Stack';
+import Contact from './views/Contact';
 
 // Muestra la vista que está guardada en el estado global (renderizado condicional).
 function VistaActual() {
@@ -16,6 +17,7 @@ function VistaActual() {
 
   if (vista === 'proyectos') return <Projects />;
   if (vista === 'stack') return <Stack />;
+  if (vista === 'contacto') return <Contact />;
   return <Home />;
 }
 
