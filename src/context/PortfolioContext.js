@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
+import { fetchProjects } from '../services/projectService';
 import { STORAGE_CHAT, STORAGE_CONTACTOS } from '../config';
 
 // ─────────────────────────────────────────────────────────────
@@ -7,7 +8,7 @@ import { STORAGE_CHAT, STORAGE_CONTACTOS } from '../config';
 // Evita pasar props de componente en componente ("prop drilling").
 // Comparte con todas las vistas:
 //   - vista, navegar            → qué vista se muestra (navbar y botones)
-//   - projects                  → proyectos (pendiente: carga con fetch)
+//   - projects, loading, error  → proyectos cargados con fetch
 //   - chatHistory               → historial del chat (se guarda en localStorage)
 //   - contactos                 → envíos del formulario (se guarda en localStorage)
 //
@@ -33,14 +34,35 @@ function nuevoId() {
 
 export function PortfolioProvider(props) {
   const [vista, setVista] = useState('inicio');
-  // Proyectos: por ahora vacíos. La carga con fetch se agrega con la vista de proyectos.
-  const projects = [];
-  const loading = false;
-  const error = null;
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   // El valor inicial se lee de localStorage, así el historial sobrevive a una recarga.
   const [chatHistory, setChatHistory] = useState(() => leerGuardado(STORAGE_CHAT, []));
   const [contactos, setContactos] = useState(() => leerGuardado(STORAGE_CONTACTOS, []));
+
+  // ── Carga de información con useEffect ──
+  // Dependencias [] → se ejecuta una sola vez, cuando el componente se monta.
+  useEffect(() => {
+    let activo = true; // evita actualizar el estado si el componente ya se desmontó
+
+    fetchProjects()
+      .then((data) => {
+        if (activo) setProjects(data);
+      })
+      .catch((err) => {
+        if (activo) setError(err.message);
+      })
+      .finally(() => {
+        if (activo) setLoading(false);
+      });
+
+    // Función de limpieza (ciclo de vida: desmontaje).
+    return () => {
+      activo = false;
+    };
+  }, []);
 
   // ── Guardar en localStorage cada vez que cambian (ciclo de vida: actualización) ──
   useEffect(() => {
